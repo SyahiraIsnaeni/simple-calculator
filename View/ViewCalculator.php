@@ -10,12 +10,12 @@ while (true){
     echo "1. Basic Calculator" . PHP_EOL;
     echo "2. Scientific Calculator" . PHP_EOL;
 
-    $calculator = input("Choose calculator (x for exit)");
+    $typeCalculator = input("Choose calculator (x for exit)");
 
-    if ($calculator == "x"){
+    if ($typeCalculator == "x"){
         echo "Thank you for using this app!" . PHP_EOL;
         break;
-    }elseif($calculator == "1"){
+    }elseif($typeCalculator == "1"){
         echo "Basic Calculator" . PHP_EOL;
         echo "1. Addition" . PHP_EOL;
         echo "2. Substraction" . PHP_EOL;
@@ -25,105 +25,105 @@ while (true){
         if ($basic == "x"){
             //cancel
         }elseif ($basic == "1"){
-            $basicCalculator = new BasicCalculator();
+            $calculator = new BasicCalculator();
             while (true){
                 $number = input("Input number (x for finish)");
                 if ($number == "x"){
                     break;
                 }else{
-                    $basicCalculator->addNumber($number);
+                    $calculator->addNumber($number);
                 }
             }
             $calculation = "";
             $result = 0;
-            for ($j = 0; $j < $basicCalculator->sizeNumber(); $j++){
-                if ($j == $basicCalculator->sizeNumber() - 1){
-                    $temp = "{$basicCalculator->getNumber($j)}";
+            for ($j = 0; $j < $calculator->sizeNumber(); $j++){
+                if ($j == $calculator->sizeNumber() - 1){
+                    $temp = "{$calculator->getNumber($j)}";
                 }else{
-                    $temp = "{$basicCalculator->getNumber($j)} + ";
+                    $temp = "{$calculator->getNumber($j)} + ";
                 }
                 $calculation = $temp;
                 echo $calculation;
-                $result = $basicCalculator->add(...$basicCalculator->getAllNumber());
+                $result = $calculator->add(...$calculator->getAllNumber());
             }
             echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
-            $basicCalculator->clear();
+            $calculator->clear();
         }elseif ($basic == "2"){
-            $basicCalculator = new BasicCalculator();
+            $calculator = new BasicCalculator();
             while (true){
                 $number = input("Input number (x for finish)");
                 if ($number == "x"){
                     break;
                 }else{
-                    $basicCalculator->addNumber($number);
+                    $calculator->addNumber($number);
                 }
             }
             $calculation = "";
             $result = 0;
-            for ($j = 0; $j < $basicCalculator->sizeNumber(); $j++){
-                if ($j == $basicCalculator->sizeNumber() - 1){
-                    $temp = "{$basicCalculator->getNumber($j)}";
+            for ($j = 0; $j < $calculator->sizeNumber(); $j++){
+                if ($j == $calculator->sizeNumber() - 1){
+                    $temp = "{$calculator->getNumber($j)}";
                 }else{
-                    $temp = "{$basicCalculator->getNumber($j)} - ";
+                    $temp = "{$calculator->getNumber($j)} - ";
                 }
                 $calculation = $temp;
                 echo $calculation;
-                $result = $basicCalculator->substract(...$basicCalculator->getAllNumber());
+                $result = $calculator->substract(...$calculator->getAllNumber());
             }
             echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
-            $basicCalculator->clear();
+            $calculator->clear();
         }elseif ($basic == "3"){
-            $basicCalculator = new BasicCalculator();
+            $calculator = new BasicCalculator();
             while (true){
                 $number = input("Input number (x for finish)");
                 if ($number == "x"){
                     break;
                 }else{
-                    $basicCalculator->addNumber($number);
+                    $calculator->addNumber($number);
                 }
             }
             $calculation = "";
             $result = 0;
-            for ($j = 0; $j < $basicCalculator->sizeNumber(); $j++){
-                if ($j == $basicCalculator->sizeNumber() - 1){
-                    $temp = "{$basicCalculator->getNumber($j)}";
+            for ($j = 0; $j < $calculator->sizeNumber(); $j++){
+                if ($j == $calculator->sizeNumber() - 1){
+                    $temp = "{$calculator->getNumber($j)}";
                 }else{
-                    $temp = "{$basicCalculator->getNumber($j)} * ";
+                    $temp = "{$calculator->getNumber($j)} * ";
                 }
                 $calculation = $temp;
                 echo $calculation;
-                $result = $basicCalculator->multiply(...$basicCalculator->getAllNumber());
+                $result = $calculator->multiply(...$calculator->getAllNumber());
             }
             echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
-            $basicCalculator->clear();
+            $calculator->clear();
         }elseif ($basic == "4"){
-            $basicCalculator = new BasicCalculator();
+            $calculator = new BasicCalculator();
             while (true){
                 $number = input("Input number (x for finish)");
                 if ($number == "x"){
                     break;
                 }else{
-                    $basicCalculator->addNumber($number);
+                    $calculator->addNumber($number);
                 }
             }
             $calculation = "";
             $result = 0;
-            for ($j = 0; $j < $basicCalculator->sizeNumber(); $j++){
-                if ($j == $basicCalculator->sizeNumber() - 1){
-                    $temp = "{$basicCalculator->getNumber($j)}";
+            for ($j = 0; $j < $calculator->sizeNumber(); $j++){
+                if ($j == $calculator->sizeNumber() - 1){
+                    $temp = "{$calculator->getNumber($j)}";
                 }else{
-                    $temp = "{$basicCalculator->getNumber($j)} : ";
+                    $temp = "{$calculator->getNumber($j)} : ";
                 }
                 $calculation = $temp;
                 echo $calculation;
-                $result = $basicCalculator->divide(...$basicCalculator->getAllNumber());
+                $result = $calculator->divide(...$calculator->getAllNumber());
             }
             echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
-            $basicCalculator->clear();
+            $calculator->clear();
         }else{
             echo "Can't understand the request" . PHP_EOL;
         }
-    }elseif ($calculator == "2"){
+    }elseif ($typeCalculator == "2"){
         echo "Scientific Calculator" . PHP_EOL;
         echo "1. Square Root" . PHP_EOL;
         echo "2. Exponentiation" . PHP_EOL;
@@ -132,19 +132,19 @@ while (true){
         if ($scientific == "x"){
             //cancel
         }elseif ($scientific == "1"){
-            $scientificCalculator = new ScientificCalculator();
+            $calculator = new ScientificCalculator();
             $number = input("Input number (x for cancel)");
             if ($number == "x"){
                 //cancel
             }else{
-                $scientificCalculator->addNumber($number);
-                echo "√{$scientificCalculator->getNumber(0)}" . PHP_EOL;
-                $result = $scientificCalculator->squareRoot($scientificCalculator->getNumber(0));
+                $calculator->addNumber($number);
+                echo "√{$calculator->getNumber(0)}" . PHP_EOL;
+                $result = $calculator->squareRoot($calculator->getNumber(0));
                 echo "Result = " . $result . PHP_EOL . PHP_EOL;
             }
-            $scientificCalculator->clear();
+            $calculator->clear();
         }elseif ($scientific == "2"){
-            $scientificCalculator = new ScientificCalculator();
+            $calculator = new ScientificCalculator();
             $baseNumber = input("Input base number (x for cancel)");
 
             if ($baseNumber == "x"){
@@ -154,26 +154,26 @@ while (true){
                 if($exponentNumber == "x"){
                     //cancel
                 }else{
-                    $scientificCalculator->addNumber($baseNumber);
-                    $scientificCalculator->addNumber($exponentNumber);
-                    echo "{$scientificCalculator->getNumber(0)}^{$scientificCalculator->getNumber(1)}";
-                    $result = $scientificCalculator->exponentiation($scientificCalculator->getNumber(0), $scientificCalculator->getNumber(1));
+                    $calculator->addNumber($baseNumber);
+                    $calculator->addNumber($exponentNumber);
+                    echo "{$calculator->getNumber(0)}^{$calculator->getNumber(1)}";
+                    $result = $calculator->exponentiation($calculator->getNumber(0), $calculator->getNumber(1));
                     echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
                 }
             }
-            $scientificCalculator->clear();
+            $calculator->clear();
         }elseif ($scientific == "3"){
-            $scientificCalculator = new ScientificCalculator();
+            $calculator = new ScientificCalculator();
             $number = input("Input number (x for finish)");
             if ($number == "x"){
                 //cancel
             }else{
-                $scientificCalculator->addNumber($number);
-                echo "{$scientificCalculator->getNumber(0)}!";
-                $result = $scientificCalculator->factorial($scientificCalculator->getNumber(0));
+                $calculator->addNumber($number);
+                echo "{$calculator->getNumber(0)}!";
+                $result = $calculator->factorial($calculator->getNumber(0));
                 echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
             }
-            $scientificCalculator->clear();
+            $calculator->clear();
         }else{
             echo "Can't understand the request" . PHP_EOL;
         }
