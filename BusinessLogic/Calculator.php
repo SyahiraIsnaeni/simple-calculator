@@ -18,7 +18,7 @@ abstract class Calculator{
         return $this->number[$index];
     }
 
-    public function addNumber($number): void
+    public function setNumber($number): void
     {
         $this->number[] = $number;
     }

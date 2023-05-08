@@ -31,7 +31,7 @@ while (true){
                 if ($number == "x"){
                     break;
                 }else{
-                    $calculator->addNumber($number);
+                    $calculator->setNumber($number);
                 }
             }
             $calculation = "";
@@ -55,7 +55,7 @@ while (true){
                 if ($number == "x"){
                     break;
                 }else{
-                    $calculator->addNumber($number);
+                    $calculator->setNumber($number);
                 }
             }
             $calculation = "";
@@ -79,7 +79,7 @@ while (true){
                 if ($number == "x"){
                     break;
                 }else{
-                    $calculator->addNumber($number);
+                    $calculator->setNumber($number);
                 }
             }
             $calculation = "";
@@ -103,7 +103,7 @@ while (true){
                 if ($number == "x"){
                     break;
                 }else{
-                    $calculator->addNumber($number);
+                    $calculator->setNumber($number);
                 }
             }
             $calculation = "";
@@ -137,7 +137,7 @@ while (true){
             if ($number == "x"){
                 //cancel
             }else{
-                $calculator->addNumber($number);
+                $calculator->setNumber($number);
                 echo "√{$calculator->getNumber(0)}" . PHP_EOL;
                 $result = $calculator->squareRoot($calculator->getNumber(0));
                 echo "Result = " . $result . PHP_EOL . PHP_EOL;
@@ -154,8 +154,8 @@ while (true){
                 if($exponentNumber == "x"){
                     //cancel
                 }else{
-                    $calculator->addNumber($baseNumber);
-                    $calculator->addNumber($exponentNumber);
+                    $calculator->setNumber($baseNumber);
+                    $calculator->setNumber($exponentNumber);
                     echo "{$calculator->getNumber(0)}^{$calculator->getNumber(1)}";
                     $result = $calculator->exponentiation($calculator->getNumber(0), $calculator->getNumber(1));
                     echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
@@ -168,7 +168,7 @@ while (true){
             if ($number == "x"){
                 //cancel
             }else{
-                $calculator->addNumber($number);
+                $calculator->setNumber($number);
                 echo "{$calculator->getNumber(0)}!";
                 $result = $calculator->factorial($calculator->getNumber(0));
                 echo "\nResult = " . $result . PHP_EOL . PHP_EOL;
